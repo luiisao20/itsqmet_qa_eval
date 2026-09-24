@@ -3,7 +3,7 @@
 {% endblock %}
 {% block content %}
 <div class="container-fluid text-center">
-  <h1>{% if form.instance.pk %} Editar {% else %} Crear {% endif %} Usuario</h1>
+  <h1>{% if form.instance.pk %} Editar {% else %} Crear {% endif %} Contacto</h1>
   <form method="POST" class="form">
     {% csrf_token %} {% bootstrap_form form %}
     <div class="mt-3">
