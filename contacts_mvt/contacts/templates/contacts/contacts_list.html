@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block title %}Lista de Usuarios{% endblock %} {% block content %}
+<div class="mt-4">
+  <h2 class="mb-4">Lista de Contactos</h2>
+  <a href="{% url 'contact_create' %}" role="button" class="btn btn-primary mb-4"
+    >Crear nuevo contacto</a
+  >
+
+  <div class="table text-start">
+    <table class="table table-hover table-bordered align-middle">
+      <thead class="">
+        <tr class="text-center">
+          <th>ID</th>
+          <th>Email</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Género</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for contact in contacts %}
+        <tr class="text-center">
+          <td>{{ contact.id }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.first_name }}</td>
+          <td>{{ contact.last_name }}</td>
+          <td>
+            <a
+              href="{% url 'contact_detail' contact.id  %}"
+              class="btn btn-info"
+              role="button"
+              >Ir</a
+            >
+            <a
+              href="{% url 'contact_update' contact.id  %}"
+              class="btn btn-warning"
+              role="button"
+              >Editar</a
+            >
+            <a
+              href="{% url 'contact_delete' contact.id  %}"
+              class="btn btn-danger"
+              role="button"
+              >Eliminar</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
