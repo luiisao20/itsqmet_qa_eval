@@ -1,7 +1,7 @@
 from django.forms import ModelForm
-from .models import Product
+from .models import Contact
 
-class ProductForm(ModelForm):
+class ContactForm(ModelForm):
   class Meta:
-    model = Product
+    model = Contact
     fields = "__all__"
